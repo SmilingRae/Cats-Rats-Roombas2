@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing = false;
     private bool isInvincible = false;
 
+    private bool isKnockedBack = false;
+    private float knockbackTimer = 0f;
+
     private float dashCooldownTimer = 0f;
     private float dashTimer = 0f;
     private float invincibilityTimer = 0f;
@@ -45,6 +48,12 @@ public class PlayerMovement : MonoBehaviour
 
     public bool IsInvincible => isInvincible;
     public Vector2 LastMoveDirection => lastMoveDirection;
+
+    public void ApplyKnockback(float knockbackDuration)
+    {
+        isKnockedBack = true;
+        knockbackTimer = knockbackDuration;
+    }
     void Update()
     {
         dashCooldownTimer -= Time.deltaTime;
@@ -57,6 +66,18 @@ public class PlayerMovement : MonoBehaviour
                 isInvincible = false;
             }
 
+        }
+
+        if(isKnockedBack)
+        {
+            knockbackTimer -= Time.deltaTime;
+            if(knockbackTimer <= 0f)
+            {
+                isKnockedBack = false;
+                rb.linearVelocity = Vector2.zero;
+            }
+
+            return;
         }
 
         if (isDashing)
@@ -130,7 +151,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (!isDashing)
+        if (!isDashing && !isKnockedBack)
         {
             rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
         }
