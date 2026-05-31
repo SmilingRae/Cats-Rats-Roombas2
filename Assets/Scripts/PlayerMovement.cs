@@ -1,3 +1,4 @@
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,11 @@ public class PlayerMovement : MonoBehaviour
     public float duration = 0.15f;
     public float dashCooldown = 1f;
     public float invincibilityDuration = 0.2f;
+   
+    
+    public float lungeSpeed = 3f;
+    public float lungeDuration = 0.05f;
+    
     public Tutorial tutorial;
 
     private Rigidbody2D rb;
@@ -18,13 +24,14 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isDashing = false;
     private bool isInvincible = false;
-
+    private bool isLunging = false;
     private bool isKnockedBack = false;
     private float knockbackTimer = 0f;
 
     private float dashCooldownTimer = 0f;
     private float dashTimer = 0f;
     private float invincibilityTimer = 0f;
+    private float lungeTimer = 0f;
 
     void Start()
     {
@@ -46,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+
     public bool IsInvincible => isInvincible;
     public Vector2 LastMoveDirection => lastMoveDirection;
 
@@ -54,9 +62,19 @@ public class PlayerMovement : MonoBehaviour
         isKnockedBack = true;
         knockbackTimer = knockbackDuration;
     }
+
+    public void AttackLunge()
+    {
+        if (isDashing || isKnockedBack) return;
+
+        isLunging = true;
+        lungeTimer = lungeDuration;
+
+        rb.linearVelocity = lastMoveDirection * lungeSpeed;
+    }
     void Update()
     {
-        dashCooldownTimer -= Time.deltaTime;
+        dashCooldownTimer -= Time.unscaledDeltaTime;
 
         if (isInvincible)
         {
@@ -70,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(isKnockedBack)
         {
-            knockbackTimer -= Time.deltaTime;
+            knockbackTimer -= Time.unscaledDeltaTime;
             if(knockbackTimer <= 0f)
             {
                 isKnockedBack = false;
@@ -82,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isDashing)
         {
-            dashTimer -= Time.deltaTime;
+            dashTimer -= Time.unscaledDeltaTime;
             if (dashTimer <= 0f)
             {
                 isDashing = false;
@@ -91,6 +109,18 @@ public class PlayerMovement : MonoBehaviour
 
             return;
         }
+
+        if (isLunging)
+        {
+            lungeTimer -= Time.unscaledDeltaTime;
+            if(lungeTimer <= 0f)
+            {
+                isLunging = false;
+                rb.linearVelocity = Vector2.zero;
+            }
+            return;
+        }
+
 
         float x = 0f;
         float y = 0f;
@@ -151,7 +181,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (!isDashing && !isKnockedBack)
+        if (!isDashing && !isKnockedBack && !isLunging)
         {
             rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
         }

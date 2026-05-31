@@ -26,6 +26,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0) && !isAttacking)
         {
+            PlayerMovement.Instance.AttackLunge();
             isAttacking = true;
             attackTimer = attackDuration;
 

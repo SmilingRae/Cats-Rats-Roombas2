@@ -60,19 +60,11 @@ public class EnemyAttack : MonoBehaviour
                 rb.AddForce(knockbackDir * knockbackForce, ForceMode2D.Impulse);
             }
 
-            if(hitParticlePrefab != null)
+            if(CameraShake.Instance != null) 
             {
-                Vector2 contactPoint = collider.ClosestPoint(transform.position);
-                Instantiate(hitParticlePrefab, contactPoint, Quaternion.identity);
+                CameraShake.Instance.HitStop(0.05f);
             }
 
-            StartCoroutine(HitStopRoutine());
-
-            SpriteRenderer playerSprite = collider.GetComponentInChildren<SpriteRenderer>();
-            if (playerSprite != null)
-            {
-                StartCoroutine(FlashRoutine(playerSprite));
-            }
 
             if(CameraShake.Instance != null)
             {
@@ -90,12 +82,5 @@ public class EnemyAttack : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    private IEnumerator FlashRoutine(SpriteRenderer sprite)
-    {
-        sprite.color = damageFlashColor;
-
-        yield return new WaitForSecondsRealtime(flashDuration);
-
-        sprite.color = Color.white;
-    }
+    
 }
