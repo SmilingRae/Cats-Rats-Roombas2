@@ -7895,10 +7895,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   musicSource: {fileID: 1374679862}
   SFXSource: {fileID: 329667723}
-  background: {fileID: 0}
-  death: {fileID: 0}
-  attack: {fileID: 8300000, guid: b1bdad77bf11c684182f332513f8120c, type: 3}
+  enemyDamage: {fileID: 8300000, guid: 69da37e7b0d093040a4fc9e2e7d88b7f, type: 3}
+  mouseAttack: {fileID: 8300000, guid: d955d2e6796121c4a979120a9a526dc7, type: 3}
+  attack: {fileID: 8300000, guid: cd3e8234ff8759a40962c5d34b9f7ca6, type: 3}
   pickup: {fileID: 8300000, guid: 8976e0ad5e454a64fb7cd6f2900c1499, type: 3}
+  dogAttack: {fileID: 8300000, guid: 67d323ce343b03f418849feede8573e2, type: 3}
+  playerDamage: {fileID: 8300000, guid: fdf9b0a79f7d0c241a45622fd06db9c8, type: 3}
 --- !u!4 &1935547836
 Transform:
   m_ObjectHideFlags: 0
