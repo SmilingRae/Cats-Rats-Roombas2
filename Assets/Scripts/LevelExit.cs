@@ -19,6 +19,7 @@ public class LevelExit : MonoBehaviour
 
         if (inventory.HasItem(requiredItem))
         {
+            inventory.ClearInventory();
             SceneManager.LoadScene(nextSceneName);
         }
         else
