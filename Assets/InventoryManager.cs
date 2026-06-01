@@ -15,22 +15,7 @@ public class InventoryManager : MonoBehaviour
         
     }
 
-    // not sure if we will ever need inventory to be visible in game, will keep in case for future
-   /* void Update()
-    {
-        if(Input.GetButtonDown("Inventory") && menuActivated)
-        {
-            InventoryMenu.SetActive(false);
-            menuActivated = false;
-        }
-
-        else
-         if(Input.GetButtonDown("Inventory") && !menuActivated)
-        {
-            InventoryMenu.SetActive(true);
-            menuActivated = true;
-        }
-    }*/
+ 
 
     public void AddItem(string itemName, int quantity, Sprite itemSprite)
     {
