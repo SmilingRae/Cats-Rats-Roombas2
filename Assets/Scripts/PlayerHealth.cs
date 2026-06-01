@@ -9,9 +9,11 @@ public class PlayerHealth : MonoBehaviour
     public TMP_Text healthText;
     private PlayerMovement movement;
     private bool isDead;
+    AudioManager audioManager;
 
     void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         movement = GetComponent<PlayerMovement>();
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -52,6 +54,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (health <= 0 && !isDead)
         {
+            audioManager.PlaySFX(audioManager.playerDamage);
             isDead = true;
             Die();
         }
