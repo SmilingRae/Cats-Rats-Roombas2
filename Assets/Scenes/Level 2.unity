@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d34fdf5f10af847a75c65ee77f3323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  damage: 5
+  damage: 2
   attackCooldown: 1
   knockbackForce: 5
   knockbackDuration: 0.2
@@ -814,7 +814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d34fdf5f10af847a75c65ee77f3323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  damage: 5
+  damage: 2
   attackCooldown: 1
   knockbackForce: 5
   knockbackDuration: 0.2
@@ -903,7 +903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d34fdf5f10af847a75c65ee77f3323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  damage: 5
+  damage: 2
   attackCooldown: 1
   knockbackForce: 5
   knockbackDuration: 0.2
@@ -1529,7 +1529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d34fdf5f10af847a75c65ee77f3323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  damage: 5
+  damage: 2
   attackCooldown: 1
   knockbackForce: 5
   knockbackDuration: 0.2
@@ -3256,7 +3256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d34fdf5f10af847a75c65ee77f3323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  damage: 5
+  damage: 2
   attackCooldown: 1
   knockbackForce: 5
   knockbackDuration: 0.2
@@ -4457,7 +4457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d34fdf5f10af847a75c65ee77f3323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  damage: 5
+  damage: 2
   attackCooldown: 1
   knockbackForce: 5
   knockbackDuration: 0.2
