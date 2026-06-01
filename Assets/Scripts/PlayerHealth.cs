@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     private bool isDead;
     AudioManager audioManager;
 
+
     void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
@@ -79,4 +80,5 @@ public class PlayerHealth : MonoBehaviour
         gameObject.SetActive(true);
         UpdateHealthText();
     }
+
 }
