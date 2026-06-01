@@ -10,12 +10,14 @@ public class EnemyHealth : MonoBehaviour
     public float knockbackDuration = 0.15f;
 
     private Rigidbody2D rb;
+    AudioManager audioManager;
 
     private Vector2 knockbackVelocity;
     private float knockbackTimer = 0f;
 
     void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         health = totalHealth;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -28,10 +30,14 @@ public class EnemyHealth : MonoBehaviour
         
         knockbackVelocity = knockbackDirection * knockbackForce;
         knockbackTimer = knockbackDuration;
+        
 
         if(health <= 0)
         {
+
             Die();
+            audioManager.PlaySFX(audioManager.enemyDamage);
+
         }
 
         

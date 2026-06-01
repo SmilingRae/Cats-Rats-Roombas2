@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
+    AudioManager audioManager;
     public int damage = 15;
     public float attackCooldown = 1f;
     public float knockbackForce = 5f;
@@ -17,7 +18,7 @@ public class EnemyAttack : MonoBehaviour
 
     void Start()
     {
-        
+         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     
@@ -34,9 +35,11 @@ public class EnemyAttack : MonoBehaviour
 
         PlayerHealth player = collider.GetComponent<PlayerHealth>();
 
+
         if (player == null)
         {
             player = collider.GetComponentInParent<PlayerHealth>();
+            
         }
         
 
@@ -56,6 +59,7 @@ public class EnemyAttack : MonoBehaviour
                 if (playerMove != null)
                 {
                     playerMove.ApplyKnockback(knockbackDuration);
+                     audioManager.PlaySFX(audioManager.mouseAttack);
                 }
                 rb.AddForce(knockbackDir * knockbackForce, ForceMode2D.Impulse);
             }
@@ -71,6 +75,7 @@ public class EnemyAttack : MonoBehaviour
                 CameraShake.Instance.Shake(0.2f);
             }
         }
+       
     }
 
     private IEnumerator HitStopRoutine()
