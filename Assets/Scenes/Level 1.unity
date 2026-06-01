@@ -4529,7 +4529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9dacf7293640734cbcbb70fdf1b5687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelExit
-  requiredItem: Keycard
+  requiredItem: Keycard1
   nextSceneName: Level 2
 --- !u!61 &882790738
 BoxCollider2D:
@@ -8211,6 +8211,10 @@ PrefabInstance:
     - target: {fileID: 6452529647586185032, guid: 5ee76c5e27affd94f8398811d3eec6df, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013519332264745629, guid: 5ee76c5e27affd94f8398811d3eec6df, type: 3}
+      propertyPath: itemName
+      value: Keycard1
       objectReference: {fileID: 0}
     - target: {fileID: 7443625913372969058, guid: 5ee76c5e27affd94f8398811d3eec6df, type: 3}
       propertyPath: m_Icon

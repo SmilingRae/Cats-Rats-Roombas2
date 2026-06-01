@@ -29,7 +29,7 @@ public class Item : MonoBehaviour
             inventoryManager.AddItem(itemName, quantity, sprite);
             audioManager.PlaySFX(audioManager.pickup);
 
-            if(SceneManager.GetActiveScene().name == "Level 2")
+            if(SceneManager.GetActiveScene().name == "Level 3")
             {
                 MenuManager menuManager = GameManager.Instance.GetComponent<MenuManager>();
                 menuManager.ShowYouWin();
