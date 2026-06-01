@@ -3055,7 +3055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d34fdf5f10af847a75c65ee77f3323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  damage: 5
+  damage: 2
   attackCooldown: 1
   knockbackForce: 5
   knockbackDuration: 0.2
@@ -3419,7 +3419,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3704,7 +3704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &619394801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3718,7 +3718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 2
-  m_LightType: 4
+  m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3940,7 +3940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d34fdf5f10af847a75c65ee77f3323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  damage: 5
+  damage: 2
   attackCooldown: 1
   knockbackForce: 5
   knockbackDuration: 0.2
@@ -4029,7 +4029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d34fdf5f10af847a75c65ee77f3323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  damage: 5
+  damage: 2
   attackCooldown: 1
   knockbackForce: 5
   knockbackDuration: 0.2
@@ -4381,7 +4381,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 696.10876, y: 461.26416}
+  m_AnchoredPosition: {x: 352, y: 272}
   m_SizeDelta: {x: 313.7825, y: 81.4717}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &792424557
@@ -4764,7 +4764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d34fdf5f10af847a75c65ee77f3323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  damage: 5
+  damage: 2
   attackCooldown: 1
   knockbackForce: 5
   knockbackDuration: 0.2
@@ -7227,7 +7227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d34fdf5f10af847a75c65ee77f3323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  damage: 5
+  damage: 2
   attackCooldown: 1
   knockbackForce: 5
   knockbackDuration: 0.2
@@ -7987,7 +7987,7 @@ MonoBehaviour:
   m_Follow: {fileID: 815901367}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 6
+    OrthographicSize: 3
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -8599,7 +8599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d34fdf5f10af847a75c65ee77f3323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  damage: 5
+  damage: 2
   attackCooldown: 1
   knockbackForce: 5
   knockbackDuration: 0.2

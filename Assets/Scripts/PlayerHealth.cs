@@ -73,6 +73,20 @@ public class PlayerHealth : MonoBehaviour
         GameManager.Instance.GetComponent<MenuManager>().gameOver();
     }
 
+    public void HealthRestore(int healAmount)
+    {
+       
+        health += 25;
+        
+
+
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+        UpdateHealthText();
+    }
+
     public void ResetPlayer()
     {
         isDead = false;
